@@ -9,6 +9,10 @@ export const GlamifyProductsSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  sellingCount: {
+    type: Number,
+    required: true,
+  },
   price: {
     type: Number,
     required: true,
