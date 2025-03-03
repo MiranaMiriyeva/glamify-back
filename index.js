@@ -8,6 +8,7 @@ import { BlogsRouter } from "./src/router/blogsRouter.js";
 
 import { UserRouter } from "./src/router/userRouter.js";
 import BasketRouter from "./src/router/basketRouter.js";
+import { CheckoutRouter } from "./src/router/chceckoutRouter.js";
 
 const app = express();
 const port = 3000;
@@ -16,6 +17,8 @@ app.use(cors());
 app.use("/glamify/products/", ProductsRouter);
 app.use("/glamify/services/", ServicesRouter);
 app.use("/glamify/blogs/", BlogsRouter);
+app.use("/glamify/checkout/", CheckoutRouter);
+
 app.use("/glamify/", UserRouter);
 app.use("/", BasketRouter);
 
