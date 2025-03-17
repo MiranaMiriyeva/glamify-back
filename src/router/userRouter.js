@@ -31,7 +31,7 @@ UserRouter.delete("/users/:id", async (req, res) => {
     res.send(error);
   }
 });
-UserRouter.put("/users/id", async (req, res) => {
+UserRouter.put("/users/:id", async (req, res) => {
   try {
     let data = await GlamifyUser.findByIdAndUpdate(req.params.id, req.body);
     res.send(data);
