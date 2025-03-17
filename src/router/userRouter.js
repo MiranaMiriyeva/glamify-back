@@ -41,7 +41,7 @@ UserRouter.put("/users/:id", async (req, res) => {
 });
 UserRouter.get("/users/:id", async (req, res) => {
   try {
-    let data = await GlamifyUser.findById(req.query.id);
+    let data = await GlamifyUser.findById(req.params.id);
     res.send(data);
   } catch (error) {
     res.send(error);
