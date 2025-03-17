@@ -6,8 +6,6 @@ export const GlamifyUserSchema = new mongoose.Schema({
   password: { type: String, required: true },
   role: { type: String, required: true, default: "user" },
   basket: { type: Array, default: [] },
-  wishlist: { type: Array, default: [] },
-  points: { type: Number, default: 0 },
 });
 
 export const GlamifyUser = mongoose.model("GlamifyUser", GlamifyUserSchema);

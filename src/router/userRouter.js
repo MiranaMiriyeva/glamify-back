@@ -15,7 +15,30 @@ UserRouter.get("/users", async (req, res) => {
     res.send(error);
   }
 });
-
+UserRouter.post("/users", async (req, res) => {
+  try {
+    let data = await GlamifyUser.create(req.body);
+    res.send(data);
+  } catch (error) {
+    res.send(error);
+  }
+});
+UserRouter.delete("/users", async (req, res) => {
+  try {
+    let data = await GlamifyUser.findByIdAndDelete(req.params.id);
+    res.send(data);
+  } catch (error) {
+    res.send(error);
+  }
+});
+UserRouter.put("/users", async (req, res) => {
+  try {
+    let data = await GlamifyUser.findByIdAndUpdate(req.params.id, req.body);
+    res.send(data);
+  } catch (error) {
+    res.send(error);
+  }
+});
 UserRouter.get("/users/:id", async (req, res) => {
   try {
     let data = await GlamifyUser.findById(req.query.id);
